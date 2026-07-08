@@ -226,7 +226,7 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <MagneticButton variant="bronze" href="#contact" className="hidden md:inline-flex">
+        <MagneticButton variant="bronze" href="https://calendly.com/markrise222/30min" className="hidden md:inline-flex">
           Book a Free Call
         </MagneticButton>
       </div>
@@ -756,7 +756,7 @@ function Pricing() {
         </Reveal>
         <Reveal delay={3}>
           <div className="mt-8">
-            <MagneticButton href="#contact" variant="primary">
+            <MagneticButton href="https://calendly.com/markrise222/30min" variant="primary">
               Book a Free Call
             </MagneticButton>
           </div>
@@ -852,7 +852,7 @@ function FinalCTA() {
         </Reveal>
         <Reveal delay={2}>
           <div className="mt-10 flex justify-center">
-            <MagneticButton href="mailto:hello@markrise.com" variant="bronze">
+            <MagneticButton href="https://calendly.com/markrise222/30min" variant="bronze">
               Book Your Free Call
             </MagneticButton>
           </div>
