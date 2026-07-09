@@ -852,7 +852,7 @@ function FinalCTA() {
         </Reveal>
         <Reveal delay={2}>
           <div className="mt-10 flex justify-center">
-            <MagneticButton href="mailto:hello@markrise.com" variant="bronze">
+            <MagneticButton href="https://calendly.com/markrise222/30min" variant="bronze">
               Book Your Free Call
             </MagneticButton>
           </div>
