@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
 });
 
 /* -------------------------------------------------------------------------- */
-/* Shared bits                                                                */
+/* Shared bits                                                                 */
 /* -------------------------------------------------------------------------- */
 
 const fadeRise = {
@@ -176,7 +176,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Nav                                                                        */
+/* Nav                                                                         */
 /* -------------------------------------------------------------------------- */
 
 function Nav() {
@@ -226,7 +226,7 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <MagneticButton variant="bronze" href="https://calendly.com/markrise222/30min" className="hidden md:inline-flex">
+        <MagneticButton variant="bronze" href="#contact" className="hidden md:inline-flex">
           Book a Free Call
         </MagneticButton>
       </div>
@@ -235,7 +235,7 @@ function Nav() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Sections                                                                   */
+/* Sections                                                                    */
 /* -------------------------------------------------------------------------- */
 
 function Hero() {
@@ -253,10 +253,12 @@ function Hero() {
       ref={ref}
       className="relative overflow-hidden bg-[var(--sand)] pt-32 pb-24 md:pt-40 md:pb-32 lg:min-h-[92vh]"
     >
+      {/* soft ambient bronze glow */}
       <div className="pointer-events-none absolute -right-40 top-40 h-[520px] w-[520px] rounded-full bg-[var(--bronze)]/10 blur-3xl" />
       <div className="pointer-events-none absolute -left-24 -top-10 h-[380px] w-[380px] rounded-full bg-[var(--olive)]/10 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 md:px-10 lg:grid-cols-12 lg:gap-8">
+        {/* Copy */}
         <div className="lg:col-span-6">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -314,6 +316,7 @@ function Hero() {
           </motion.div>
         </div>
 
+        {/* Mockup stack */}
         <div className="relative lg:col-span-6">
           <div className="relative mx-auto aspect-[5/4] w-full max-w-[640px]">
             <motion.div
@@ -348,6 +351,7 @@ function Hero() {
               />
             </motion.div>
 
+            {/* Bronze anchor line */}
             <motion.div
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
@@ -491,7 +495,7 @@ function WhyMarkRise() {
             <div className="relative overflow-hidden rounded-[24px] ring-1 ring-[var(--olive)]/10">
               <img
                 src={whyImg}
-                alt="Design studio flat-lay"
+                alt="Design studio flat-lay: color swatches, wireframe sheet, tablet with logo sketch"
                 width={1200}
                 height={1400}
                 loading="lazy"
@@ -563,7 +567,7 @@ function Process() {
                   <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[var(--ivory)] font-display text-lg font-semibold text-[var(--olive-muted)] ring-1 ring-[var(--olive)]/15">
                     {s.n}
                   </div>
-                  <h3 className="text-xl font-medium">s.title</h3>
+                  <h3 className="text-xl font-medium">{s.title}</h3>
                   <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-[var(--ink)]/75">
                     {s.desc}
                   </p>
@@ -618,7 +622,7 @@ function Work() {
               <TiltCard className="group relative overflow-hidden rounded-[20px] ring-1 ring-[var(--olive)]/10 shadow-[0_18px_50px_-30px_rgba(61,67,38,0.4)]">
                 <img
                   src={p.img}
-                  alt={`${p.name} website`}
+                  alt={`${p.name} website by MarkRise`}
                   width={1200}
                   height={900}
                   loading="lazy"
@@ -641,6 +645,7 @@ function Work() {
         </div>
       </div>
 
+      {/* Marquee */}
       <div className="marquee-wrap mt-20 overflow-hidden border-y border-[var(--olive)]/10 bg-[var(--sand)] py-8">
         <div className="flex w-max animate-marquee">
           {[...niches, ...niches].map((n, i) => (
@@ -751,7 +756,7 @@ function Pricing() {
         </Reveal>
         <Reveal delay={3}>
           <div className="mt-8">
-            <MagneticButton href="https://calendly.com/markrise222/30min" variant="primary">
+            <MagneticButton href="#contact" variant="primary">
               Book a Free Call
             </MagneticButton>
           </div>
@@ -847,7 +852,7 @@ function FinalCTA() {
         </Reveal>
         <Reveal delay={2}>
           <div className="mt-10 flex justify-center">
-            <MagneticButton href="https://calendly.com/markrise222/30min" variant="bronze">
+            <MagneticButton href="mailto:hello@markrise.com" variant="bronze">
               Book Your Free Call
             </MagneticButton>
           </div>
@@ -856,21 +861,37 @@ function FinalCTA() {
 
       <div className="relative mx-auto mt-24 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-[var(--sand)]/15 px-6 pt-8 md:flex-row md:px-10">
         <span className="font-display text-xl text-[var(--sand)]">MarkRise</span>
-        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          <a href="#work" className="text-sm text-[var(--sand)]/70 transition-colors hover:text-[var(--sand)]">Work</a>
-          <a href="#services" className="text-sm text-[var(--sand)]/70 transition-colors hover:text-[var(--sand)]">Services</a>
-          <a href="#pricing" className="text-sm text-[var(--sand)]/70 transition-colors hover:text-[var(--sand)]">Pricing</a>
-          <a href="#about" className="text-sm text-[var(--sand)]/70 transition-colors hover:text-[var(--sand)]">About</a>
+        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[var(--sand)]/70">
+          <a href="#work" className="hover:text-[var(--bronze)]">Work</a>
+          <a href="#services" className="hover:text-[var(--bronze)]">Services</a>
+          <a href="#pricing" className="hover:text-[var(--bronze)]">Pricing</a>
+          <a href="#about" className="hover:text-[var(--bronze)]">About</a>
+          <a href="#contact" className="hover:text-[var(--bronze)]">Contact</a>
         </nav>
-        <span className="text-xs text-[var(--sand)]/40">© {new Date().getFullYear()} MarkRise. All rights reserved.</span>
+        <div className="flex items-center gap-4 text-[var(--sand)]/70">
+          {["Instagram", "Twitter", "LinkedIn"].map((s) => (
+            <a key={s} href="#" aria-label={s} className="transition-colors hover:text-[var(--bronze)]">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+            </a>
+          ))}
+        </div>
       </div>
+      <p className="relative mt-8 text-center text-xs text-[var(--sand)]/50">
+        © {new Date().getFullYear()} MarkRise. Strategic websites, thoughtfully built.
+      </p>
     </section>
   );
 }
 
+/* -------------------------------------------------------------------------- */
+/* Page                                                                        */
+/* -------------------------------------------------------------------------- */
+
 function Home() {
   return (
-    <div className="min-h-screen bg-[var(--sand)] text-[var(--ink)] antialiased selection:bg-[var(--bronze)]/30 selection:text-[var(--olive)]">
+    <div className="bg-[var(--sand)] text-[var(--ink)]">
       <Nav />
       <main>
         <Hero />
